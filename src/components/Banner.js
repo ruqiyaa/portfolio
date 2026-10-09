@@ -24,6 +24,7 @@ export const Banner = () => {
     return () => clearTimeout(ticker);
 }, [text, delta, isDeleting, loopNum]);
 
+// just to check commit 
     const tick = () => {
         const i = loopNum % toRotate.length;
         const fullText = toRotate[i];
