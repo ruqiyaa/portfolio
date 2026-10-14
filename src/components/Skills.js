@@ -1,71 +1,79 @@
-import { Container, Row, Col } from "react-bootstrap";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
-
+import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
 import colourSharp from "../assets/img/color-sharp.png";
 
-
+const skillGroups = [
+  {
+    id: "frontend",
+    tabName: "Frontend",
+    skills: [
+      "React.js", "Redux", "React Query", "JavaScript (ES6+)",
+      "HTML5", "CSS3", "React Bootstrap", "CoreUI",
+      "Responsive Design", "Accessibility (WCAG)",
+    ],
+  },
+  {
+    id: "tools",
+    tabName: "Tools & Practices",
+    skills: [
+      "Git", "REST API Integration", "Performance Optimization",
+      "Cross-browser Compatibility", "Figma to Code",
+    ],
+  },
+  {
+    id: "other",
+    tabName: "Automation & Other",
+    skills: ["Blue Prism", "C#", "C++"],
+  },
+  {
+    id: "soft",
+    tabName: "Soft Skills",
+    skills: [
+      "Agile/Scrum Collaboration", "Problem-solving",
+      "Cross-functional Teamwork", "Documentation",
+    ],
+  },
+];
 
 export const Skills = () => {
-    const responsive = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1
-        }
-    };
+  return (
+    <section className="skill" id="skills">
+      <Container>
+        <Row>
+          <Col>
+            <div className="skill-bx">
+              <h2>Skills</h2>
+              <p>The languages, frameworks and strengths I bring</p>
 
-    return (
-        <section className="skill" id="skills">
-            <Container>
-                <Row>
-                    <Col>
-                        <div className="skill-bx">
-                            <h2>
-                                Skills
-                            </h2>
-                            <p> ddd yyy iibd <br></br> text text test texxxte</p>
-                            <Carousel responsive={responsive} infinite={true} className="skill-slider">
-                                <div className="item">
-                                    <img src={meter1} alt="img"></img>
-                                    <h5>Web Development</h5>
-                                </div>
+              <Tab.Container id="skills-tabs" defaultActiveKey={skillGroups[0].id}>
+                <Nav
+                  variant="pills"
+                  fill
+                  className="skills-nav mb-4 justify-content-center align-items-center"
+                >
+                  {skillGroups.map((group) => (
+                    <Nav.Item key={group.id}>
+                      <Nav.Link eventKey={group.id}>{group.tabName}</Nav.Link>
+                    </Nav.Item>
+                  ))}
+                </Nav>
 
-                                <div className="item">
-                                    <img src={meter2} alt="img"></img>
-                                    <h5>JavaScript</h5>
-                                </div>
-
-                                <div className="item">
-                                    <img src={meter3} alt="img"></img>
-                                    <h5>HTML</h5>
-                                </div>
-
-                                <div className="item">
-                                    <img src={meter1} alt="img"></img>
-                                    <h5>C++</h5>
-                                </div>
-                            </Carousel>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
-            <img className="background-image-left" src={colourSharp} alt="gradient" />
-        </section>
-    )
-}
+                <Tab.Content>
+                  {skillGroups.map((group) => (
+                    <Tab.Pane eventKey={group.id} key={group.id}>
+                      <div className="skill-chips">
+                        {group.skills.map((skill) => (
+                          <span className="skill-chip" key={skill}>{skill}</span>
+                        ))}
+                      </div>
+                    </Tab.Pane>
+                  ))}
+                </Tab.Content>
+              </Tab.Container>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+      <img className="background-image-left" src={colourSharp} alt="" />
+    </section>
+  );
+};
