@@ -3,12 +3,12 @@ import colourSharp from "../assets/img/color-sharp.png";
 
 const skillGroups = [
   {
-    id: "frontend",
-    tabName: "Frontend",
+    id: "technical",
+    tabName: "Tech",
     skills: [
       "React.js", "Redux", "React Query", "JavaScript (ES6+)",
-      "HTML5", "CSS3", "React Bootstrap", "CoreUI",
-      "Responsive Design", "Accessibility (WCAG)",
+      "HTML5", "CSS3", "SQL", "C++", "React Bootstrap", "CoreUI",
+      "Responsive Design", "Python", "C#", ".NET", "Accessibility (WCAG)",
     ],
   },
   {
