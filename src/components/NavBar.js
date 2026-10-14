@@ -72,16 +72,15 @@ export const NavBar = () => {
               </a>
 
               <span className="email-wrapper">
-                <a
-                  href="#"
+                <button
+                  type="button"
+                  className="email-toggle"
                   aria-label="Show email"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setShowEmail(!showEmail);
-                  }}
+                  aria-expanded={showEmail}
+                  onClick={() => setShowEmail(!showEmail)}
                 >
-                  <img src={navIcon3} alt="Email" />
-                </a>
+                  <img src={navIcon3} alt="" />
+                </button>
 
                 {showEmail && (
                   <div className="email-popup">

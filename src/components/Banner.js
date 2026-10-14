@@ -1,57 +1,46 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { ArrowRightCircle } from "react-bootstrap-icons"; 
-//import headerImg from '../assets/img/header-img.svg';
-import bannerimg from '../assets/img/banner-img.png';
-import 'animate.css';
+import { ArrowRightCircle } from "react-bootstrap-icons";
+import bannerimg from "../assets/img/banner-img.png";
+import "animate.css";
 import TrackVisibility from "react-on-screen";
-import { isVisible } from "@testing-library/user-event/dist/utils";
+
+// Outside the component, so they aren't recreated on every render
+const toRotate = ["Web Developer", "Web Designer", "Frontend Developer"];
+const period = 2000;
 
 export const Banner = () => {
+  const [loopNum, setLoopNum] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [text, setText] = useState("");
+  const [delta, setDelta] = useState(150);
 
-    const [loopNum, setLoopNum] = useState(0);
-    const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = [
-        "Web Developer", 
-        "Web Designer", 
-        "Frontend Developer"
-    ];
-    const[text, setText] = useState("");
-    const [delta, setDelta] = useState(150);
-    const period = 2000;
-
-   useEffect(() => {
-    const ticker = setTimeout(() => {
-        tick();
-    }, delta);
-
-    return () => clearTimeout(ticker);
-}, [text, delta, isDeleting, loopNum]);
-
-// just to check commit 
+  useEffect(() => {
     const tick = () => {
-        const i = loopNum % toRotate.length;
-        const fullText = toRotate[i];
-        const updatedText = isDeleting
-            ? fullText.substring(0, text.length - 1)
-            : fullText.substring(0, text.length + 1);
+      const fullText = toRotate[loopNum % toRotate.length];
+      const updatedText = isDeleting
+        ? fullText.substring(0, text.length - 1)
+        : fullText.substring(0, text.length + 1);
 
-        setText(updatedText);
+      setText(updatedText);
 
-        if(isDeleting){
-            setDelta(40)
-        }
+      if (isDeleting) {
+        setDelta(40);
+      }
 
-        if(!isDeleting && updatedText === fullText){
-            setIsDeleting(true);
-            setDelta(period);
+      if (!isDeleting && updatedText === fullText) {
+        setIsDeleting(true);
+        setDelta(period);
+      } else if (isDeleting && updatedText === "") {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setDelta(80);
+      }
+    };
 
-        } else if(isDeleting && updatedText === ''){
-            setIsDeleting(false);
-            setLoopNum(loopNum + 1);
-            setDelta(80);
-        }
-    }   
+    const ticker = setTimeout(tick, delta);
+    return () => clearTimeout(ticker);
+  }, [text, delta, isDeleting, loopNum]);
 
     return (
         <section className= "banner" id="home">
