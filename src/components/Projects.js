@@ -2,7 +2,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorsharp2 from "../assets/img/color-sharp2.png";
-import projimg1 from "../assets/img/spin-wheel-img.png";
 import projimg2 from "../assets/img/fractal-tree-img.png";
 import projimg3 from "../assets/img/movie-app-img.png";
 import projimg4 from "../assets/img/proj-img-4.png";
