@@ -151,6 +151,16 @@ span.navbar-text {
   margin-left: 14px;
 }
 
+.footer .social-icon {
+  justify-content: flex-end;   /* right corner */
+  margin-left: 0;
+}
+@media (max-width: 576px) {
+  .footer .social-icon {
+    justify-content: center;
+  }
+}
+
 /* LinkedIn, GitHub and the email button share one style */
 .social-icon > a,
 .social-icon .email-toggle {
@@ -197,6 +207,18 @@ span.navbar-text {
 .social-icon > a:hover img,
 .social-icon .email-toggle:hover img {
   filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+}
+
+.banner h1 .wrap {
+  display: block;
+  min-height: 1em;
+}
+@media (max-width: 992px) {
+  .banner h1 { font-size: 45px; }
+}
+
+@media (max-width: 576px) {
+  .banner h1 { font-size: 34px; }
 }
 
 /* "Let's Connect" button: > means only a direct child of navbar-text */
