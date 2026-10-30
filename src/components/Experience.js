@@ -15,11 +15,13 @@ const experiences = [
       "Converted 30+ Figma designs into accessible, WCAG-compliant JSX components.",
       "Implemented Redux and React Query caching to reduce redundant API calls and improve page load time.",
       "Designed Blue Prism automation workflows and built C# backend components.",
+      "Developed Blue Prism automations: process and object layers, work queues, exception handling and retry logic, credential management and Control Room scheduling; also worked with UiPath.",
+      "Created a reusable C# Blue Prism object that removed MS Excel dependency from 70% of processes, cutting Excel licence costs by ~50%.",
     ],
   },
   {
     id: "career-break",
-    role: "Career Break - Upskilling",
+    role: "Freelance and Career Break - Upskilling",
     company: "Self-learning",
     period: "Jul 2025 - Present",
     points: [

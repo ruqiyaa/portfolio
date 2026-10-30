@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const toRotate = ["Web Developer", "Web Designer", "Frontend Developer"];
+const toRotate = ["Web Developer", "Frontend Developer", "RPA Developer"];
 const period = 2000;
 
 export const TypingText = () => {

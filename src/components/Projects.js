@@ -6,10 +6,32 @@ import projimg1 from "../assets/img/spin-wheel-img.png";
 import projimg2 from "../assets/img/fractal-tree-img.png";
 import projimg3 from "../assets/img/movie-app-img.png";
 import projimg4 from "../assets/img/proj-img-4.png";
+import expenseimg from "../assets/img/expense-tracker-img.png";
+import connect4img from "../assets/img/connect-4-img.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
 const projects = [
+  {
+    id: "expense-tracker",
+    tabName: "Expense Tracker",
+    title: "Expense Tracker with AI insights",
+    description:
+      "Expense tracking application with dashboard that update with each entry. Used Node.js and Express to interact with the database. Integrated sql3lite as a database. You can delete and enter daily expenses and the dashboard updates the charts. There is also a goal tracker.",
+    image: expenseimg,
+    demo: "", // add your live link
+    github: "https://github.com/ruqiyaa/expense-tracker-with-ai-insights", // add your GitHub link
+  },
+  {
+    id: "connect-4",
+    tabName: "Connect 4",
+    title: "Connect 4 Game",
+    description:
+      "A simple connect 4 game where you can create room and play with your friends. Used Socket.io to create connection on the server where the game updates in real time.",
+    image: connect4img,
+    demo: "https://connnect4.netlify.app/", // add your live link
+    github: "https://github.com/ruqiyaa/connect4", // add your GitHub link
+  },
   {
     id: "fractal-tree",
     tabName: "Fractal Tree",
@@ -40,16 +62,17 @@ const projects = [
     demo: "",
     github: "",
   },
-  {
-    id: "spin-wheel",
-    tabName: "Spin Wheel",
-    title: "Spin Wheel Game",
-    description:
-      "A basic spin wheel game built with JavaScript. The wheel spins on click and lands on a random result.",
-    image: projimg1,
-    demo: "", // add your live link
-    github: "https://github.com/ruqiyaa/SpinWheel", // add your GitHub link
-  },
+  // {
+  //   id: "spin-wheel",
+  //   tabName: "Spin Wheel",
+  //   title: "Spin Wheel Game",
+  //   description:
+  //     "A basic spin wheel game built with JavaScript. The wheel spins on click and lands on a random result.",
+  //   image: projimg1,
+  //   demo: "", // add your live link
+  //   github: "https://github.com/ruqiyaa/SpinWheel", // add your GitHub link
+  // },
+  
   
  
 //   {
