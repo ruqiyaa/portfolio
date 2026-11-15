@@ -1,7 +1,6 @@
 
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import bannerimg from "../assets/img/banner-img.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import { TypingText } from "./TypingText";

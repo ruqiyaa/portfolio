@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import contactImg from '../assets/img/get-in-touch.png';
 import { Container, Row, Col } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
 import FractalTree from "./FractalTree";
