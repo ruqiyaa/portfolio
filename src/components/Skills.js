@@ -3,34 +3,35 @@ import colourSharp from "../assets/img/color-sharp.png";
 
 const skillGroups = [
   {
-    id: "technical",
-    tabName: "Tech",
+    id: "frontend",
+    tabName: "Frontend",
     skills: [
-      "React.js", "Redux", "React Query", "JavaScript (ES6+)",
-      "HTML5", "CSS3", "Node.js","Express.js" ,"SQL", "C++", "React Bootstrap", "CoreUI",
-      "Responsive Design", "Python", "C#", ".NET", "Accessibility (WCAG)",
+      "React.js", "JavaScript (ES6+)", "HTML5", "CSS3", 
+      "Redux", "React Query", "React Bootstrap", "CoreUI",
+      "Responsive Design", "Accessibility (WCAG)",
+    ],
+  },
+  {
+    id: "backend",
+    tabName: "Backend & Data",
+    skills: [
+      "Python", "Node.js", "Express.js", "REST API Integration",
+      "SQL", "SQLite", "Socket.io", "C#", ".NET",
     ],
   },
   {
     id: "tools",
     tabName: "Tools & Practices",
     skills: [
-      "Git", "REST API Integration", "Performance Optimization",
-      "Cross-browser Compatibility", "Figma to Code",
+      "Blue Prism (RPA)", "Git", "Figma to Code", "Performance Optimization",
+      "Cross-browser Compatibility", "Agile / Scrum",
+      
     ],
   },
   {
-    id: "other",
-    tabName: "Automation & Other",
-    skills: ["Blue Prism", "C#", "C++"],
-  },
-  {
-    id: "soft",
-    tabName: "Soft Skills",
-    skills: [
-      "Agile/Scrum Collaboration", "Problem-solving",
-      "Cross-functional Teamwork", "Documentation",
-    ],
+    id: "learning",
+    tabName: "Upskilling",
+    skills: ["Data Structures", "MERN stack"],
   },
 ];
 
