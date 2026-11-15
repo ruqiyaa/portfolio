@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Jump</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="game-container">
+        <header class="game-header">
+            <h1>Kitten Jump</h1>
+
+            <div class="score-board">
+                <div>
+                    <span> SCORE </span>
+                    <strong id="score">0</strong>
+                </div>
+                <div>
+                    <span> BEST </span>
+                    <strong id="best-score">0</strong>
+                </div>
+                <div>
+                    <span>COINS</span>
+                    <strong id="coins">0</strong>
+                </div>
+            </div>
+            <button id="sound-toggle" class="sound-switch" role="switch" aria-checked="false" aria-label="Sound">
+            <span class="switch-label">Sound</span>
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+            </button>
+        </header>
+
+        <section class="game-area">
+            <div class="mountain-layer" aria-hidden="true"></div>
+            
+            <div class="cloud-layer" aria-hidden="true">
+                <div class="cloud cloud-one"></div>
+                <div class="cloud cloud-two"></div>
+                <div class="cloud cloud-three"></div>
+            </div>
+            <div class="start-screen" id="start-screen">
+                <h2>Ready to jump?</h2>
+                <p>Help your kitty avoid obstacles!</p>
+                <button id="start-btn">Play Game</button>
+            </div>
+
+            <div class="cat" id="cat">
+                <div class="cat-sprite"></div>
+            </div>
+
+            <div class="ground"></div>
+        </section>
+
+        <p class="instructions">
+            <span class="desktop-instruction">
+                Press SPACE or click to jump!
+            </span>
+
+            <span class="mobile-instruction">
+                Tap anywhere in the game to jump!
+            </span>
+        </p>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

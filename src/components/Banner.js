@@ -5,6 +5,7 @@ import bannerimg from "../assets/img/banner-img.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import { TypingText } from "./TypingText";
+import Portrait from "./Portrait";
 
 
 export const Banner = () => {
@@ -34,7 +35,7 @@ export const Banner = () => {
                     
 
                     <Col xs={12} md={6} xl={5}>
-                        <img src={bannerimg} alt="header img" />
+                        <Portrait />
                     </Col>
                 </Row>
             </Container>

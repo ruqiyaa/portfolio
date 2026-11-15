@@ -1,3 +1,27 @@
+.skill      { background: linear-gradient(to bottom, #f3faff 0%, #e6f4fd 100%); }
+.project    { background: linear-gradient(to bottom, #e6f4fd 0%, #fdeff4 100%); }
+.experience { background: linear-gradient(to bottom, #fdeff4 0%, #f3faff 100%); }
+.game-section {
+  max-width: none;
+  background: linear-gradient(to bottom, #f3faff 0%, #e6f4fd 100%);
+}
+
+
+/************ Theme (matches the Kitten Jump game) ************/
+:root {
+  --bg: #f3faff;
+  --surface: #ffffff;
+  --heading: #536f91;
+  --text: #5b7390;            /* slightly darker than the game's #748ba3 so body text is easier to read */
+  --accent: #ff91b5;
+  --accent-hover: #f477a1;
+  --accent-dark: #71518c;
+  --card-border: #f3e4d8;
+  --line: rgba(83, 111, 145, 0.25);
+  --sky: linear-gradient(to bottom, #a9dcf8 0%, #c5e8fb 55%, #f3faff 100%);
+  --shadow: 0 10px 30px rgba(83, 111, 145, 0.12);
+}
+
 /************ Custom Font ************/
 @font-face {
 	font-family: Centra;
@@ -24,15 +48,16 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 75px;
+  scroll-padding-top: 120px;
 }
 
+/* The only body rule in the file */
 body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #121212 !important;
-  color: #fff !important;
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
   font-family: 'Centra', sans-serif !important;
 }
 
@@ -40,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   line-height: normal;
+  color: var(--heading);
 }
 
 p, a, li, button, ul {
@@ -48,6 +74,8 @@ p, a, li, button, ul {
   line-height: normal;
   text-decoration: none;
 }
+
+a { color: var(--accent-dark); }
 
 a:hover {
   text-decoration: none;
@@ -75,12 +103,13 @@ input:focus, textarea:focus, select:focus {
 }
 
 p.success {
-	color: green;
+	color: #2e9e5b;
 }
 
 p.danger {
-	color: red;
+	color: #d64565;
 }
+
 /************ Navbar Css ************/
 nav.navbar {
   padding: 18px 0;
@@ -92,53 +121,42 @@ nav.navbar {
 }
 nav.navbar.scrolled {
   padding: 0px 0;
-  background-color: #121212;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(83, 111, 145, 0.12);
 }
 nav.navbar a.navbar-brand {
     width: 9%;
 }
 
-/* All navbar links: white and large by default */
+
+.navbar-toggler {
+  border: 1px solid var(--line);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23536f91' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+/* All navbar links */
 nav.navbar .navbar-nav .nav-link.navbar-link,
 nav.navbar .navbar-nav .nav-link.active-navbar-link {
-color: #fff !important;
-font-size: 18px !important;
-font-weight: 400 !important;
-letter-spacing: 0.8px;
-padding: 0 25px;
-opacity: 1 !important;
-transition: all 0.2s ease-in-out;
+  color: var(--heading) !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.8px;
+  padding: 0 25px;
+  opacity: 1 !important;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Hovered or selected link: slightly bigger and bolder */
+/* Hovered or selected link */
 nav.navbar .navbar-nav .nav-link.navbar-link:hover,
 nav.navbar .navbar-nav .nav-link.active-navbar-link:hover,
 nav.navbar .navbar-nav .nav-link.active-navbar-link {
-color: #fff !important;
-font-size: 20px !important;
-font-weight: 700 !important;
-opacity: 1 !important;
+  color: var(--accent-dark) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
 }
-
-
-
-/* nav.navbar .navbar-nav .nav-link.navbar-link {
-    font-weight: 400 !important;
-    opacity: 0.75;
-}
-nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
-nav.navbar .navbar-nav a.nav-link.navbar-link.active {
-    color: #fff !important;
-    letter-spacing: 0.8px;
-    padding: 0 25px;
-    font-size: 18px !important;
-    transition: all 0.2s ease-in-out;
-}
-
-nav.navbar .navbar-nav .nav-link.active-navbar-link {
-    font-weight: 700 !important;
-    opacity: 1;
-} */
 
 span.navbar-text {
   display: flex;
@@ -152,8 +170,12 @@ span.navbar-text {
 }
 
 .footer .social-icon {
-  justify-content: flex-end;   /* right corner */
+  justify-content: center;
   margin-left: 0;
+}
+.social-icon > a:last-child,
+.social-icon > a:only-child {
+  margin-right: 0;
 }
 @media (max-width: 576px) {
   .footer .social-icon {
@@ -168,14 +190,14 @@ span.navbar-text {
   width: 42px;
   height: 42px;
   padding: 0;
-  background: rgba(217, 217, 217, 0.1);
+  background: rgba(255, 255, 255, 0.7);
   display: inline-flex;
   border-radius: 50%;
   margin-right: 6px;
   align-items: center;
   justify-content: center;
   line-height: 1;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line);
   cursor: pointer;
   overflow: hidden;
 }
@@ -186,7 +208,7 @@ span.navbar-text {
   width: 42px;
   height: 42px;
   position: absolute;
-  background-color: #ffffff;
+  background-color: var(--accent);
   border-radius: 50%;
   transform: scale(0);
   transition: 0.3s ease-in-out;
@@ -197,16 +219,18 @@ span.navbar-text {
   transform: scale(1);
 }
 
+/* The icons were white for the dark theme: make them slate, then white on hover */
 .social-icon > a img,
 .social-icon .email-toggle img {
   width: 40%;
   z-index: 1;
   transition: 0.3s ease-in-out;
+  filter: brightness(0) opacity(0.6);
 }
 
 .social-icon > a:hover img,
 .social-icon .email-toggle:hover img {
-  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+  filter: brightness(0) invert(1);
 }
 
 .banner h1 .wrap {
@@ -221,15 +245,17 @@ span.navbar-text {
   .banner h1 { font-size: 34px; }
 }
 
-/* "Let's Connect" button: > means only a direct child of navbar-text */
+/* "Let's Connect" button */
 .navbar-text > button {
   font-weight: 700;
-  color: #fff;
-  border: 1px solid #fff;
+  color: var(--heading);
+  border: 1px solid var(--heading);
+  border-radius: 30px;
   padding: 18px 34px;
   font-size: 18px;
   margin-left: 18px;
   position: relative;
+  overflow: hidden;
   background-color: transparent;
   transition: 0.3s ease-in-out;
 }
@@ -241,14 +267,15 @@ span.navbar-text {
   width: 0%;
   height: 100%;
   position: absolute;
-  background-color: #fff;
+  background-color: var(--accent);
   left: 0;
   top: 0;
   z-index: -1;
   transition: 0.3s ease-in-out;
 }
 .navbar-text > button:hover {
-  color: #121212;
+  color: #fff;
+  border-color: var(--accent);
 }
 .navbar-text > button:hover::before {
   content: "";
@@ -260,18 +287,17 @@ span.navbar-text {
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
-  padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
-  background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  padding: 260px 0 140px 0;
+  background: var(--sky);
 }
 .banner .tagline {
   font-weight: 700;
   letter-spacing: 0.8px;
-  padding: 8px 10px;
-  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 8px 16px;
+  color: var(--accent-dark);
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid var(--card-border);
+  border-radius: 30px;
   font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
@@ -285,14 +311,14 @@ span.navbar-text {
   display: block;
 }
 .banner p {
-  color: #B8B8B8;
+  color: var(--text);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
   width: 96%;
 }
 .banner button {
-  color: #fff;
+  color: var(--accent-dark);
   font-weight: 700;
   font-size: 20px;
   margin-top: 60px;
@@ -323,7 +349,7 @@ span.navbar-text {
     }
 }
 .txt-rotate > .wrap {
-  border-right: 0.08em solid #666;
+  border-right: 0.08em solid var(--accent-dark);
 }
 
 /************ Skills Css ************/
@@ -333,8 +359,10 @@ span.navbar-text {
   position: relative;
 }
 .skill-bx {
-  background: #151515;
-  border-radius: 64px;
+  background: var(--surface);
+  border: 2px solid var(--card-border);
+  box-shadow: var(--shadow);
+  border-radius: 48px;
   text-align: center;
   padding: 40px 50px;
   margin-top: -60px;
@@ -344,7 +372,7 @@ span.navbar-text {
 	font-weight: 700;
 }
 .skill p {
-    color: #B8B8B8;
+    color: var(--text);
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
@@ -355,7 +383,7 @@ span.navbar-text {
   width: 85%;
   margin: 0 auto 30px;
   border-radius: 50px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(83, 111, 145, 0.08);
   overflow: hidden;
 }
 
@@ -363,14 +391,15 @@ span.navbar-text {
   background-color: transparent;
   border-radius: 0;
   padding: 14px 0;
-  color: #fff;
+  color: var(--heading);
   font-weight: 500;
   font-size: 16px;
   transition: 0.3s;
 }
 
 .skill .nav.nav-pills .nav-link.active {
-  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  background: var(--accent);
+  color: #fff;
 }
 
 .skill-chips {
@@ -383,20 +412,22 @@ span.navbar-text {
 
 .skill-chip {
   padding: 10px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid var(--card-border);
   border-radius: 30px;
   font-size: 16px;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--heading);
+  background: #fff;
   transition: 0.3s;
 }
 
 .skill-chip:hover {
-  background: #fff;
-  color: #121212;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
 }
 
 @media (max-width: 576px) {
+  .skill-bx { padding: 30px 20px; }
   .skill .nav.nav-pills.skills-nav {
     border-radius: 20px;
     flex-wrap: wrap;
@@ -408,6 +439,7 @@ span.navbar-text {
 
 /*-------*/
 
+/* Decorative side images were made for the dark theme: keep them faint */
 .background-image-left {
   position: absolute;
   top: 20%;
@@ -416,6 +448,7 @@ span.navbar-text {
   max-width: 40%;
   z-index: -4;
   pointer-events: none;
+  opacity: 0.35;
 }
 
 .background-image-right {
@@ -426,14 +459,43 @@ span.navbar-text {
   max-width: 40%;
   z-index: -4;
   pointer-events: none;
+  opacity: 0.35;
 }
+/*********  CAROUSEL PROJECTS **********/
+/* Project carousel arrows: sit on the image, not the card text */
+.project-slider .react-multiple-carousel__arrow {
+  top: 78px !important;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 2px 10px rgba(47, 69, 96, 0.25);
+  min-width: 40px;
+  min-height: 40px;
+}
+.project-slider .react-multiple-carousel__arrow:hover {
+  background: var(--heading);
+}
+.project-slider .react-multiple-carousel__arrow::before {
+  color: var(--heading);
+  font-size: 18px;
+}
+.project-slider .react-multiple-carousel__arrow:hover::before {
+  color: #fff;
+}
+.project-slider .react-multiple-carousel__arrow--left  { left: 24px; }
+.project-slider .react-multiple-carousel__arrow--right { right: 24px; }
 
+/* Dots */
+.project-slider .react-multi-carousel-dot button {
+  border-color: var(--heading);
+}
+.project-slider .react-multi-carousel-dot--active button {
+  background: var(--heading);
+}
 
 /************ Projects Css ************/
 .project {
-  padding: 40px 0 20px;
+  padding: 60px 0 20px;
   position: relative;
-  background-color: black;
+  background-color: transparent;
 }
 .project h2 {
 	font-size: 45px;
@@ -441,7 +503,7 @@ span.navbar-text {
   text-align: center;
 }
 .project p {
-  color: #B8B8B8;
+  color: var(--text);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -460,15 +522,17 @@ span.navbar-text {
 
 .project-card {
   height: 100%;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
+  background: var(--surface);
+  border: 2px solid var(--card-border);
+  border-radius: 24px;
   overflow: hidden;
+  box-shadow: var(--shadow);
   transition: 0.3s;
 }
 
 .project-card:hover {
-  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-4px);
+  border-color: var(--accent);
 }
 
 .project-card img {
@@ -492,7 +556,7 @@ span.navbar-text {
   width: 100%;
   margin: 0;
   text-align: left;
-  color: #b8b8b8;
+  color: var(--text);
   font-size: 15px;
   line-height: 1.6;
 }
@@ -505,21 +569,21 @@ span.navbar-text {
   display: inline-block;
   margin-right: 10px;
   padding: 6px 18px;
-  border: 1px solid #fff;
+  border: 1px solid var(--accent);
   border-radius: 20px;
-  color: #fff;
+  color: var(--accent-dark);
   font-size: 14px;
   transition: 0.3s;
 }
 
 .project-links a:hover {
-  background: #fff;
-  color: #121212;
+  background: var(--accent);
+  color: #fff;
 }
 
-/************ Projects Css ************/
+/************ Contact Css ************/
 .contact {
-  background: linear-gradient(90.21deg, #3d162d -5.91%, #130a39 111.58%);
+  background: linear-gradient(90.21deg, #dff1fc -5.91%, #fde8ef 111.58%);
   padding: 60px 0 60px 0;
 }
 .contact img {
@@ -532,10 +596,10 @@ span.navbar-text {
 }
 .contact form input, .contact form textarea {
   width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: #fff;
+  border: 2px solid var(--card-border);
   border-radius: 20px;
-  color: #fff;
+  color: var(--heading);
   margin: 0 0 8px 0;
   padding: 18px 26px;
   font-weight: 500;
@@ -544,27 +608,27 @@ span.navbar-text {
   transition: 0.3s ease-in-out;
 }
 .contact form input:focus, .contact form textarea:focus {
-  background: rgba(255, 255, 255, 1);
-  color: #121212;
+  border-color: var(--accent);
+  color: var(--heading);
 }
 .contact form input::placeholder, .contact form textarea::placeholder {
   font-size: 16px;
   font-weight: 400;
-  color: #fff;
+  color: #8fa3b8;
 }
 .contact form input:focus::placeholder, .contact form textarea:focus::placeholder {
-  color: #121212;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 .contact form button {
   font-weight: 700;
-  color: #000;
-  background-color: #fff;
+  color: #fff;
+  background-color: var(--accent);
   padding: 14px 48px;
   font-size: 18px;
   margin-top: 25px;
-  border-radius: 0;
+  border-radius: 30px;
   position: relative;
+  overflow: hidden;
   transition: 0.3s ease-in-out;
 }
 .contact form button span {
@@ -576,7 +640,7 @@ span.navbar-text {
 }
 .contact form button::before {
   content: "";
-  background: #121212;
+  background: var(--accent-hover);
   width: 0;
   height: 100%;
   position: absolute;
@@ -592,15 +656,14 @@ span.navbar-text {
 /************ Footer Css ************/
 .footer {
   padding: 0 0 50px 0;
-  background-image: url('./assets/img/footer-bg.png');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, var(--bg) 0%, #c5e8fb 100%);
 }
 .newsletter-bx {
   background: #FFFFFF;
+  border: 2px solid var(--card-border);
+  box-shadow: var(--shadow);
   border-radius: 55px;
-  color: #121212;
+  color: var(--heading);
   padding: 85px 125px;
   margin-bottom: 80px;
   margin-top: -122px;
@@ -621,7 +684,7 @@ span.navbar-text {
 }
 .new-email-bx::before {
   content: "";
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: linear-gradient(90.21deg, #ff91b5 -5.91%, #86c9f2 111.58%);
   border-radius: 20px;
   position: absolute;
   z-index: -1;
@@ -643,14 +706,14 @@ span.navbar-text {
 }
 .new-email-bx input {
   width: 100%;
-  color: #121212;
+  color: var(--heading);
   font-weight: 500;
   background: transparent;
   border: 0;
   padding: 0 15px;
 }
 .new-email-bx button {
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: var(--accent);
   padding: 20px 65px;
   color: #fff;
   font-weight: 500;
@@ -663,14 +726,13 @@ span.navbar-text {
 .footer p {
   font-weight: 400;
   font-size: 14px;
-  color: #B8B8B8;
+  color: var(--text);
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
 
 
-/* EXPERIENCE.....*/
-
+/************ Experience Css ************/
 
 .experience {
   padding: 60px 0;
@@ -682,7 +744,7 @@ span.navbar-text {
   text-align: center;
 }
 .experience p {
-  color: #B8B8B8;
+  color: var(--text);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -692,7 +754,7 @@ span.navbar-text {
 }
 
 .experience > .container > .row > .col > div > p {
-  color: #b8b8b8;
+  color: var(--text);
   text-align: center;
   margin: 10px 0 40px;
 }
@@ -702,7 +764,7 @@ span.navbar-text {
   max-width: 800px;
   margin: 0 auto;
   padding-left: 30px;
-  border-left: 2px solid rgba(255, 255, 255, 0.25);
+  border-left: 2px solid var(--line);
 }
 
 .exp-item {
@@ -717,24 +779,26 @@ span.navbar-text {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #aa367c;
-  border: 3px solid #121212;
+  background: var(--accent);
+  border: 3px solid var(--bg);
 }
 
 .exp-card {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--surface);
+  border: 2px solid var(--card-border);
   border-radius: 20px;
   padding: 25px 30px;
+  box-shadow: var(--shadow);
   transition: 0.3s;
 }
 
 .exp-card:hover {
-  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent);
 }
 
 .exp-period {
   font-size: 14px;
-  color: #b8b8b8;
+  color: var(--text);
 }
 
 .exp-card h3 {
@@ -746,7 +810,7 @@ span.navbar-text {
 .exp-card h4 {
   font-size: 17px;
   font-weight: 500;
-  color: #b8b8b8;
+  color: var(--accent-dark);
   margin-bottom: 12px;
 }
 
@@ -756,7 +820,7 @@ span.navbar-text {
 }
 
 .exp-card li {
-  color: #fff;
+  color: var(--text);
   line-height: 1.7;
   font-size: 16px;
 }
@@ -767,7 +831,7 @@ span.navbar-text {
 }
 
 
-/* navbar email */
+/************ Navbar email popup ************/
 
 .email-wrapper {
   position: relative;
@@ -783,15 +847,16 @@ span.navbar-text {
   align-items: center;
   gap: 10px;
   padding: 10px 14px;
-  background: #dbd9d9;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: #fff;
+  border: 2px solid var(--card-border);
+  box-shadow: var(--shadow);
   border-radius: 12px;
   white-space: nowrap;
 }
 
 .email-popup a {
   all: unset;
-  /* color: #fff; */
+  color: var(--heading);
   font-size: 14px;
   cursor: pointer;
 }
@@ -799,13 +864,41 @@ span.navbar-text {
 .email-popup button {
   padding: 4px 12px;
   background: transparent;
-  border: 1px solid #fff;
+  border: 1px solid var(--accent);
   border-radius: 20px;
-  color: #fff;
+  color: var(--accent-dark);
   font-size: 13px;
 }
 
 .email-popup button:hover {
-  background: #424141;
-  color: #121212;
+  background: var(--accent);
+  color: #fff;
+}
+
+
+/* One continuous background for the whole page */
+html { background: #f3faff; }
+
+body {
+  background: linear-gradient(
+    to bottom,
+    #a9dcf8 0%,
+    #c5e8fb 10%,
+    #f3faff 24%,
+    #e6f4fd 45%,
+    #fdeff4 65%,
+    #e6f4fd 82%,
+    #f3faff 100%
+  ) no-repeat !important;
+}
+
+/* Sections no longer paint their own backgrounds */
+.banner,
+.skill,
+.project,
+.experience,
+.contact,
+.footer,
+.game-section {
+  background: transparent !important;
 }

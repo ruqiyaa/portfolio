@@ -7,6 +7,7 @@ import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Experience } from './components/Experience';
+import GameSection from './components/GameSection';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,7 +19,9 @@ function App() {
       <NavBar/>
       <Banner />
       <Skills />
+      <GameSection />
       <Projects />
+      
       <Experience />
       <Contact /><br></br>
       <Footer />

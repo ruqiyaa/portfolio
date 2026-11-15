@@ -21,11 +21,11 @@ const experiences = [
   },
   {
     id: "career-break",
-    role: "Freelance and Career Break - Upskilling",
+    role: "Career Break - Upskilling",
     company: "Self-learning",
     period: "Jul 2025 - Present",
     points: [
-      "Learning TypeScript, Jest, Data Structures, and the MERN stack.",
+      "Learning Python, Data Structures, and the MERN stack.",
       "Building projects, including this portfolio.",
     ],
   },

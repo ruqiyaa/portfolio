@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import contactImg from '../assets/img/get-in-touch-hd.png';
+import contactImg from '../assets/img/get-in-touch.png';
 import { Container, Row, Col } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
+import FractalTree from "./FractalTree";
 
 
 
@@ -67,7 +68,7 @@ export const Contact = () => {
             <Container>
                 <Row className="align-items-center">
                     <Col md={6}>
-                        <img src={contactImg} alt="Contact us"/>
+                        <FractalTree />
                     </Col>
                     <Col md={6}>
                         <h2>Get in touch</h2>

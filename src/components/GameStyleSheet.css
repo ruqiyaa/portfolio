@@ -1,0 +1,53 @@
+.game-section {
+  
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.game-inner {
+  max-width: 1150px; margin: 0 auto;
+}
+.game-section h2 { font-size: 2rem; font-weight: 700; }
+.game-section p  { color: var(--text); margin: 8px 0 28px; }
+
+.game-toggle {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 14px 40px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+.game-toggle:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+}
+
+.game-frame {
+  margin-top: 32px;
+  background: #fff;
+  border: 2px solid var(--card-border);
+  border-radius: 28px;
+  padding: 10px;
+  box-shadow: var(--shadow);
+  animation: game-open 0.35s ease-out;
+}
+.game-frame iframe {
+  width: 100%;
+  height: 700px;
+  border: 0;
+  border-radius: 20px;
+  display: block;
+}
+@keyframes game-open {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 680px) {
+  .game-frame iframe { height: 600px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-frame { animation: none; }
+}
