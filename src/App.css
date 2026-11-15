@@ -902,3 +902,52 @@ body {
 .game-section {
   background: transparent !important;
 }
+
+
+/************ Mobile & tablet ************/
+
+/* Tablet and below: the navbar collapses into a menu */
+@media (max-width: 991px) {
+  html { scroll-padding-top: 90px; }
+
+  nav.navbar { padding: 10px 0; }
+
+  /* The opened menu becomes a white card, readable over the hero */
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.97);
+    border: 2px solid var(--card-border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    margin-top: 10px;
+    padding: 14px 10px;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link,
+  nav.navbar .navbar-nav .nav-link.active-navbar-link,
+  nav.navbar .navbar-nav .nav-link.navbar-link:hover,
+  nav.navbar .navbar-nav .nav-link.active-navbar-link:hover {
+    font-size: 17px !important;       /* no size jump on tap */
+    padding: 10px 16px;
+  }
+  span.navbar-text {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px 16px 4px;
+  }
+  .social-icon { margin-left: 0; }
+  .navbar-text > button {
+    margin-left: 0;
+    padding: 12px 26px;
+    font-size: 16px;
+  }
+  .email-popup {
+    left: 0;
+    right: auto;
+    max-width: calc(100vw - 64px);
+  }
+
+  .banner { padding: 150px 0 110px; }
+  .banner p { width: 100%; }
+
+  .project p,
+  .experience p { width: 90%; }
+}
